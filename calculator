@@ -1,0 +1,47 @@
+def toplama(sayilar):
+    return sum(sayilar)
+
+def cikarma(sayilar):
+    sonuc = sayilar[0]
+    for sayi in sayilar[1:]:
+        sonuc -= sayi
+    return sonuc
+
+def carpma(sayilar):
+    sonuc = 1
+    for sayi in sayilar:
+        sonuc *= sayi
+    return sonuc
+
+def bolme(sayilar):
+    sonuc = sayilar[0]
+    for sayi in sayilar[1:]:
+        if sayi == 0:
+            return "Sıfıra bölme hatası"
+        sonuc /= sayi
+    return sonuc
+
+print("İşlem seçin:")
+print("1.Toplama")
+print("2.Çıkarma")
+print("3.Çarpma")
+print("4.Bölme")
+
+secim = input("Seçiminizi girin (1/2/3/4):")
+
+sayilar = list(map(float, input("Sayilari boşlukla ayırarak girin: ").split()))
+
+if secim == '1':
+    print("Sonuç =", toplama(sayilar))
+
+elif secim == '2':
+    print("Sonuç =", cikarma(sayilar))
+
+elif secim == '3':
+    print("Sonuç =", carpma(sayilar))
+
+elif secim == '4':
+    print("Sonuç =", bolme(sayilar))
+
+else:
+    print("Geçersiz giriş")
